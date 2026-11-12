@@ -1,0 +1,223 @@
+import '../models/news_model.dart';
+import '../models/roadmap_model.dart';
+import '../models/certificate_model.dart';
+import '../models/internship_model.dart';
+import '../models/resource_model.dart';
+
+class MockData {
+  static final List<NewsModel> sampleNews = [
+    NewsModel(
+      id: 'n1',
+      title: 'Google DeepMind Unveils Next-Gen AI Architecture for Autonomous Coding',
+      content: 'Researchers at Google DeepMind have introduced breakthrough reasoning models capable of multi-step code synthesis and software architecture planning. The models demonstrate remarkable capabilities in competitive programming benchmarks.',
+      imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800',
+      category: 'AI & ML',
+      tags: ['AI', 'Google', 'DeepMind', 'MachineLearning'],
+      createdAt: DateTime.now().subtract(const Duration(hours: 3)),
+      likes: 245,
+      views: 1890,
+    ),
+    NewsModel(
+      id: 'n2',
+      title: 'Flutter 3.24 Released with Impeller Engine by Default on Android',
+      content: 'The Flutter team has rolled out new graphics performance improvements, seamless Vulkan backend support, and enhanced multi-window desktop features, making cross-platform apps smoother than ever.',
+      imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800',
+      category: 'Mobile Dev',
+      tags: ['Flutter', 'Dart', 'Android', 'CrossPlatform'],
+      createdAt: DateTime.now().subtract(const Duration(hours: 12)),
+      likes: 189,
+      views: 1420,
+    ),
+    NewsModel(
+      id: 'n3',
+      title: 'Top 10 High-Paying Tech Skills for Engineering Freshers in 2026',
+      content: 'Cloud native computing, generative AI pipeline engineering, rust systems programming, and modern cyber security operations are leading campus placement salary packages this season.',
+      imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
+      category: 'Web Dev',
+      tags: ['Careers', 'Engineering', 'Jobs', 'Freshers'],
+      createdAt: DateTime.now().subtract(const Duration(days: 1)),
+      likes: 420,
+      views: 3100,
+    ),
+  ];
+
+  static final List<RoadmapModel> sampleRoadmaps = [
+    RoadmapModel(
+      id: 'r1',
+      title: 'Full-Stack Web Development',
+      description: 'Master HTML, CSS, JavaScript, React/Next.js, Node.js, Databases, and Cloud Deployment.',
+      category: 'Full Stack',
+      createdAt: DateTime.now(),
+      steps: [
+        const RoadmapStep(
+          title: 'Internet & Web Fundamentals',
+          description: 'Learn DNS, HTTP/HTTPS, Browsers, and Client-Server architecture.',
+          estimatedTime: '1 Week',
+          resources: ['https://developer.mozilla.org', 'https://web.dev'],
+        ),
+        const RoadmapStep(
+          title: 'HTML5 & Modern CSS3',
+          description: 'Semantic markup, Flexbox, CSS Grid, Responsive Design, and Tailwind CSS.',
+          estimatedTime: '2 Weeks',
+          resources: ['https://tailwindcss.com/docs'],
+        ),
+        const RoadmapStep(
+          title: 'JavaScript & TypeScript Mastery',
+          description: 'ES6+, Async/Await, DOM manipulation, TypeScript types and generics.',
+          estimatedTime: '3 Weeks',
+          resources: ['https://javascript.info', 'https://www.typescriptlang.org'],
+        ),
+        const RoadmapStep(
+          title: 'Frontend Framework: React / Next.js',
+          description: 'Components, Hooks, State Management, Server-Side Rendering (SSR).',
+          estimatedTime: '4 Weeks',
+          resources: ['https://react.dev', 'https://nextjs.org/docs'],
+        ),
+        const RoadmapStep(
+          title: 'Backend & APIs: Node.js / Express',
+          description: 'RESTful API design, middleware, JWT authentication, and file handling.',
+          estimatedTime: '3 Weeks',
+          resources: ['https://expressjs.com'],
+        ),
+        const RoadmapStep(
+          title: 'Databases: PostgreSQL & MongoDB',
+          description: 'Relational schemas, SQL queries, NoSQL indexing, Prisma / Mongoose ORM.',
+          estimatedTime: '2 Weeks',
+          resources: ['https://www.postgresql.org', 'https://www.prisma.io'],
+        ),
+      ],
+    ),
+    RoadmapModel(
+      id: 'r2',
+      title: 'Artificial Intelligence & Machine Learning',
+      description: 'From Python math fundamentals to Deep Learning, LLMs, and Model Deployment.',
+      category: 'AI & ML',
+      createdAt: DateTime.now(),
+      steps: [
+        const RoadmapStep(
+          title: 'Python for Data Science',
+          description: 'NumPy, Pandas, Matplotlib, Data Wrangling.',
+          estimatedTime: '2 Weeks',
+          resources: ['https://numpy.org', 'https://pandas.pydata.org'],
+        ),
+        const RoadmapStep(
+          title: 'Mathematics & Statistics for ML',
+          description: 'Linear Algebra, Calculus, Probability, and Hypothesis Testing.',
+          estimatedTime: '3 Weeks',
+          resources: ['https://khanacademy.org'],
+        ),
+        const RoadmapStep(
+          title: 'Classical Machine Learning',
+          description: 'Regression, Classification, Decision Trees, Scikit-Learn.',
+          estimatedTime: '3 Weeks',
+          resources: ['https://scikit-learn.org'],
+        ),
+        const RoadmapStep(
+          title: 'Deep Learning & Neural Networks',
+          description: 'PyTorch, CNNs, RNNs, Transformers, and Transfer Learning.',
+          estimatedTime: '4 Weeks',
+          resources: ['https://pytorch.org/tutorials'],
+        ),
+      ],
+    ),
+  ];
+
+  static final List<CertificateModel> sampleCertificates = [
+    CertificateModel(
+      id: 'c1',
+      title: 'Google Cloud Computing Foundations Certificate',
+      platform: 'Google',
+      link: 'https://cloud.google.com/training/free',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png',
+      skill: 'Cloud Architecture & Kubernetes',
+      duration: '20 Hours',
+      difficulty: 'Beginner',
+      isFree: true,
+      createdAt: DateTime.now(),
+    ),
+    CertificateModel(
+      id: 'c2',
+      title: 'IBM SkillsBuild: AI Fundamentals & Prompt Engineering',
+      platform: 'IBM',
+      link: 'https://skillsbuild.org/students',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
+      skill: 'Generative AI & Ethics',
+      duration: '15 Hours',
+      difficulty: 'Beginner',
+      isFree: true,
+      createdAt: DateTime.now(),
+    ),
+    CertificateModel(
+      id: 'c3',
+      title: 'AWS Certified Cloud Practitioner Essentials',
+      platform: 'AWS',
+      link: 'https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/',
+      imageUrl: '',
+      skill: 'AWS Cloud Services & Security',
+      duration: '12 Hours',
+      difficulty: 'Intermediate',
+      isFree: true,
+      createdAt: DateTime.now(),
+    ),
+    CertificateModel(
+      id: 'c4',
+      title: 'HackerRank Problem Solving & Python Verified Skill',
+      platform: 'HackerRank',
+      link: 'https://www.hackerrank.com/skills-verification',
+      imageUrl: '',
+      skill: 'Data Structures & Algorithms',
+      duration: 'Self-paced',
+      difficulty: 'Intermediate',
+      isFree: true,
+      createdAt: DateTime.now(),
+    ),
+  ];
+
+  static final List<InternshipModel> sampleInternships = [
+    InternshipModel(
+      id: 'i1',
+      company: 'Razorpay',
+      role: 'Software Development Engineer Intern',
+      description: 'Work with the Core Payments engineering team building low-latency payment processing microservices.',
+      stipend: '₹45,000 / month',
+      duration: '6 Months',
+      location: 'Bengaluru / Hybrid',
+      type: 'Hybrid',
+      skills: ['Go', 'Node.js', 'PostgreSQL', 'Docker'],
+      applyLink: 'https://razorpay.com/jobs/',
+      deadline: DateTime.now().add(const Duration(days: 20)),
+      createdAt: DateTime.now(),
+      isActive: true,
+    ),
+    InternshipModel(
+      id: 'i2',
+      company: 'Swiggy',
+      role: 'Flutter Mobile App Intern',
+      description: 'Collaborate with frontend engineers to build snappy user interfaces for millions of daily active diners.',
+      stipend: '₹35,000 / month',
+      duration: '3 Months',
+      location: 'Remote',
+      type: 'Remote',
+      skills: ['Flutter', 'Dart', 'State Management', 'REST APIs'],
+      applyLink: 'https://careers.swiggy.com/',
+      deadline: DateTime.now().add(const Duration(days: 15)),
+      createdAt: DateTime.now(),
+      isActive: true,
+    ),
+    InternshipModel(
+      id: 'i3',
+      company: 'CRED',
+      role: 'Backend Engineering Intern',
+      description: 'Design and optimize scalable distributed systems handling millions of financial transactions.',
+      stipend: '₹50,000 / month',
+      duration: '6 Months',
+      location: 'Bengaluru',
+      type: 'Onsite',
+      skills: ['Java', 'Spring Boot', 'Kafka', 'Redis'],
+      applyLink: 'https://careers.cred.club/',
+      deadline: DateTime.now().add(const Duration(days: 25)),
+      createdAt: DateTime.now(),
+      isActive: true,
+    ),
+  ];
+}
