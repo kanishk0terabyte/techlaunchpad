@@ -31,16 +31,13 @@ jobs:
           flutter create . --platforms=android --org com.techlaunchpad
           sed -i 's/minSdkVersion flutter.minSdkVersion/minSdkVersion 21/g' android/app/build.gradle || true
           sed -i 's/minSdkVersion = flutter.minSdkVersion/minSdkVersion = 21/g' android/app/build.gradle || true
-          sed -i 's/ndkVersion = flutter.ndkVersion/ndkVersion = "27.0.12077973"/g' android/app/build.gradle || true
 
       - name: Get Dependencies
         run: flutter pub get
 
-      - name: Analyze Dart Code
-        run: flutter analyze || true
-
       - name: Build Android APK (Release)
-        run: flutter build apk --release --no-tree-shake-icons
+        run: |
+          flutter build apk --release --no-tree-shake-icons --verbose > build.log 2>&1 || (tail -n 120 build.log && exit 1)
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
